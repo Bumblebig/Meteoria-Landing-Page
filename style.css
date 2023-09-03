@@ -3,12 +3,14 @@
 }
 
 body {
-  background-color: hsla(191, 28%, 23%, 1);
+  max-width: 1445px;
+  min-width: 375px;
   color: white;
   font-family: "Josefin Sans", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0 auto;
 }
 
 /* Header styles */
@@ -17,7 +19,7 @@ header {
     url("img/cover-image.jpg");
   background-size: cover;
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 30px;
   height: 100vh;
 }
 
@@ -53,55 +55,127 @@ a {
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #6f9283ce;
 }
 
 /* Feature Section styles */
 #features {
-  padding: 50px 0;
-  text-align: center;
+  padding: 150px 0;
   background-color: #6f9283;
+  display: flex;
+  flex-flow: column;
+  gap: 120px;
 }
 
 .feature {
-  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.feature img {
-  max-width: 100%;
-  height: auto;
+.feature h2 {
+  line-height: 1.4;
+}
+
+.feature-image {
+  width: 450px;
+  border-radius: 8px;
+}
+
+.desc p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.two {
+  order: 2;
 }
 
 /* About Section styles */
 #about {
-  padding: 50px 0;
+  padding: 100px 50px;
   text-align: center;
   background-color: #1b2021;
 }
 
+#about p {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.team {
+  margin-top: 50px;
+}
+
 .team a {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media only screen and (max-width: 1100px) {
   header {
-    padding: 50px 0;
+    padding-top: 150px;
+  }
+
+  .feature {
+    width: 90%;
+    gap: 80px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header {
+    padding-top: 200px;
+  }
+
+  .feature {
+    width: 90%;
+    gap: 50px;
+  }
+
+  .feature-image {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .feature {
+    flex-flow: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .feature-image {
+    width: 450px;
+  }
+
+  .two {
+    order: 1;
+  }
+
+  .two-order {
+    order: 2;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    padding-top: 220px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
-  .btn {
-    margin-top: 10px;
-  }
-
-  #features {
-    padding: 30px 0;
-  }
-
-  #about {
-    padding: 30px 0;
+  .feature-image {
+    width: 320px;
   }
 }
